@@ -19,6 +19,7 @@ def depositar(saldo, valor, extrato, /):
     saldo += valor
     extrato += f'Depósito:\t R$ {valor:.2f}\n'
     print('\n===== Operação realizada com sucesso! =====')
+    
   else:
     ('\n===== Operação inválida, tente novamente! ====')
   return saldo, extrato
@@ -29,6 +30,7 @@ def sacar (*, saldo, valor, extrato, limite, numero_saques, limite_saques):
     excedeu_saques = numero_saques >= limite_saques
   if excedeu_saldo:
     print('\n==== Operação falhou! Você não possui saldo suficiente para realiizar esta operação. ====')
+    
   elif excedeu_limite:
     print('\n==== Operação falhou! O valor do saque é maior que o limite. ====')
   
@@ -43,7 +45,6 @@ def sacar (*, saldo, valor, extrato, limite, numero_saques, limite_saques):
         print("\n@@@ Operação falhou! O valor informado é inválido. @@@")
 
     return saldo, extrato
-
 
 def exibir_extrato(saldo, /, *, extrato):
     print("\n================ EXTRATO ================")
